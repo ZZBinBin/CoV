@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/热搜.css" />
+</head>
+<body >
+    <header>
+        <div class="line1"></div>
+        <h1>疫情信息可视化展示系统</h1>
+        <div class="line2"></div>
+        <div class="showTime">当前时间：</div>
+        <script>
+          var t = null;
+          t = setTimeout(time, 1000); //開始运行
+          function time() {
+            clearTimeout(t); //清除定时器
+            dt = new Date();
+            var y = dt.getFullYear();
+            var mt = dt.getMonth() + 1;
+            var day = dt.getDate();
+            var h = dt.getHours(); //获取时
+            var m = dt.getMinutes(); //获取分
+            var s = dt.getSeconds(); //获取秒
+            document.querySelector(".showTime").innerHTML =
+              "当前时间：" +
+              y +
+              "年" +
+              mt +
+              "月" +
+              day +
+              "-" +
+              h +
+              "时" +
+              m +
+              "分" +
+              s +
+              "秒";
+            t = setTimeout(time, 1000); //设定定时器，循环运行
+          }
+        </script>
+        <ul>
+          <li><a class="menu" id="a_1" href="概括.html" >疫情概括</a></li>
+          <li><a class="menu" id="a_2" href="我国.html" >我国疫情</a></li>
+          <li><a class="menu" id="a_3" href="海外.html" >海外疫情</a></li>
+          <li><a class="menu" id="a_4" href="热搜.html" style="background-color: #111;">疫情热搜</a></li>
+        </ul>
+    </header>
+    <div class="panel _5">
+        <div id="aaa" style="background-color:#434343;position:relative;  overflow:hidden; height:40px;">
+          <img src="images/大喇叭.png" style="margin-left:5px;margin-top:7px;width:30px;height:30px;">  
+          <div id="noticeList" style="font-weight:800;font-size:0.3rem;color:#da9842; position:absolute; top:0;height:40px;line-height: 40px;">
+                <span >jQuery文字横向滚动</span>
+                <span>gfhdgfg</span>
+          </div>
+        </div>
+        <div class="panel-footer"></div>
+    </div>
+    <section class="mainbox">
+      <div class="column">
+        <div  class="panel _1"><!--疫情观点盒子-->
+          <h2 id="h2-1">疫情观点</h2>
+          <div id = "test0" class="chart">
+            <ul>
+              <li style="height:1.5rem;border: 2px solid #111;">
+                <span style="font-weight:600;font-size: 0.5rem;color: #bdbdbd;">安倍晋三：</span>
+                <span style="font-weight:600;font-size: 0.3rem;color: #bdbdbd;">为了东京奥运会2021年7月能成功举办，日本将大力推进特效药和疫苗的开发</span>
+                <span style="font-weight:600;font-size: 0.1rem;color: #bdbdbd;">1小时前</span>
+              </li>
+            </ul>
+          </div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <div class="column"><!--今日热搜的盒子-->
+        <div  class="panel _2">
+          <h2 id="h2-2">今日热搜榜</h2>
+          <div id = "test1" class="chart" >
+            <ul>
+              <li><a href="概括.html" >疫情概括疫情概括水电费水电费水电费大幅度<span style="font-size:0.2rem">12356</span></a></li>
+            </ul>
+          </div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <div class="column"><!--鉴真辟谣的盒子-->
+        <div  class="panel _3">
+          <h2 id="h2-3">鉴真辟谣</h2>
+          <div id = "test2" class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </section>
+    <section class="deputybox"></section>
+      <div class="column">
+        <div class="panel _6">
+          <h2>热搜云图</h2>
+          <div id="test4" class="chart4"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </section>
+    <script src="js/flexible.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js-hot/roll.js"></script>
+    <script src="js-hot/test4.js"></script>
+
+</body>
+</html>

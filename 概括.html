@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/概括.css" />
+</head>
+<body >
+    <header>
+        <div class="line1"></div>
+        <h1>疫情信息可视化展示系统</h1>
+        <div class="line2"></div>
+        <div class="showTime">当前时间：</div>
+        <script>
+          var t = null;
+          t = setTimeout(time, 1000); //開始运行
+          function time() {
+            clearTimeout(t); //清除定时器
+            dt = new Date();
+            var y = dt.getFullYear();
+            var mt = dt.getMonth() + 1;
+            var day = dt.getDate();
+            var h = dt.getHours(); //获取时
+            var m = dt.getMinutes(); //获取分
+            var s = dt.getSeconds(); //获取秒
+            document.querySelector(".showTime").innerHTML =
+              "当前时间：" +
+              y +
+              "年" +
+              mt +
+              "月" +
+              day +
+              "-" +
+              h +
+              "时" +
+              m +
+              "分" +
+              s +
+              "秒";
+            t = setTimeout(time, 1000); //设定定时器，循环运行
+          }
+        </script>
+        <ul>
+          <li><a class="menu" id="a_1" href="概括.html" style="background-color: #111;">疫情概括</a></li>
+          <li><a class="menu" id="a_2" href="我国.html" >我国疫情</a></li>
+          <li><a class="menu" id="a_3" href="#" >海外疫情</a></li>
+          <li><a class="menu" id="a_4" href="#" >疫情热搜</a></li>
+        </ul>
+    </header>
+    <section class="mainbox">
+      <div class="column">
+        <div  class="panel _1"><!--新增榜的盒子-->
+          <h2 id="h2-1">今日新增top10榜</h2>
+          <div id = "test0" class="chart0"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <div class="column"><!--世界地图的盒子-->
+        <div  class="panel _2">
+          <h2 id="h2-2">累计确诊：<span id="span-1">3076362</span>现有确诊：<span id="span-2">1982841</span>死亡人数：<span id="span-3">214477</span>治愈人数：<span id="span-4">879044</span></h2>
+          <div id = "test1" class="chart1"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <div class="column"><!--百万确诊榜的盒子-->
+        <div  class="panel _3">
+          <h2 id="h2-3">今日百万确诊top10榜</h2>
+          <div id = "test2" class="chart2"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </section>
+    <section class="deputybox"></section>
+      <div class="column">
+        <div class="panel _4">
+          <h2>全球国家确诊人数与现有确诊人数</h2>
+          <div id="test3" class="chart3"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </section>
+    <script src="js/flexible.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/world.js"></script>
+    <script src="js/test0.js"></script>
+    <script src="js/test1.js"></script>
+    <script src="js/test2.js"></script> 
+    <script src="js/test3.js"></script>
+</body>
+</html>
